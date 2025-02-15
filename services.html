@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services - Awesome Solutions</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <style>
+        /* Reuse existing styles */
+        .navbar-link {
+            position: relative;
+            transition: all .4s ease-in-out;
+        }
+        .navbar-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 6px;
+            width: 0%;
+            height: 3px;
+            background-color: #0029e1;
+            z-index: -1;
+            transition: width 0.4s ease-in-out;
+        }
+        .navbar-link:hover::after {
+            width: 100%;
+        }
+        .navbar-link:hover {
+            cursor: context-menu;
+        }
+        .logo-navbar {
+            width: 150px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-custom {
+            background-color: #111827e6;
+            backdrop-filter: blur(8px);
+        }
+        .bg-gray-800 {
+            background-color: #1f2937;
+        }
+        .border-gray-700 {
+            border-color: #374151 !important;
+        }
+        .text-blue-400 {
+            color: rgb(96 165 250);
+        }
+        .text-gray-300 {
+            color: rgb(209 213 219);
+        }
+
+        /* Services page specific styles */
+        .services-hero {
+            background: linear-gradient(to bottom right, #010d22, rgb(37, 49, 69), #0e1323);
+            padding: 100px 0 50px 0;
+        }
+        .service-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .process-step::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4dafff, #0029e1);
+        }
+        .process-number {
+            position: absolute;
+            left: -1rem;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(to bottom right, #4dafff, #0029e1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4dafff, #0029e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200%;
+            background-position: center;
+        }
+        .hide-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+  </head>
+  <body style="background-color: #111827;">
+    <!-- Navbar (same as home page) -->
+    <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
+        <!-- Same navbar structure as other pages -->
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center hide-animation">
+                    <h1 class="display-4 text-white mb-4">Our <span class="gradient-text">Services</span></h1>
+                    <p class="lead text-gray-300 mb-4">Comprehensive digital solutions to help your business thrive</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Web Development -->
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-code text-blue-400 me-3 fs-4"></i>
+                            <h3 class="text-white mb-0">Web Development</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">Custom web solutions built with modern technologies and best practices.</p>
+                        <ul class="list-unstyled text-gray-300">
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Responsive Design</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>E-commerce Solutions</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Content Management Systems</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>API Integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mobile Development -->
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-mobile-alt text-blue-400 me-3 fs-4"></i>
+                            <h3 class="text-white mb-0">Mobile Development</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">Native and cross-platform mobile applications for iOS and Android.</p>
+                        <ul class="list-unstyled text-gray-300">
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>iOS Development</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Android Development</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>React Native Apps</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>App Store Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-paint-brush text-blue-400 me-3 fs-4"></i>
+                            <h3 class="text-white mb-0">UI/UX Design</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">User-centered design solutions that enhance user experience.</p>
+                        <ul class="list-unstyled text-gray-300">
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>User Research</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Wireframing</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Prototyping</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Usability Testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-bullhorn text-blue-400 me-3 fs-4"></i>
+                            <h3 class="text-white mb-0">Digital Marketing</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">Comprehensive digital marketing strategies to grow your business.</p>
+                        <ul class="list-unstyled text-gray-300">
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>SEO Optimization</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Social Media Marketing</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Content Strategy</li>
+                            <li class="mb-2"><i class="fas fa-check text-blue-400 me-2"></i>Analytics & Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-white text-center mb-5">Our Development Process</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 hide-animation">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h4 class="text-white mb-3">Discovery</h4>
+                        <p class="text-gray-300">Understanding your business needs and project requirements</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hide-animation">
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h4 class="text-white mb-3">Planning</h4>
+                        <p class="text-gray-300">Creating detailed project roadmap and technical specifications</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hide-animation">
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h4 class="text-white mb-3">Development</h4>
+                        <p class="text-gray-300">Building your solution with agile methodology</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 hide-animation">
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h4 class="text-white mb-3">Launch</h4>
+                        <p class="text-gray-300">Testing, deployment and ongoing support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Preview -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-white text-center mb-5">Recent Projects</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 hide-animation">
+                    <div class="service-card p-4">
+                        <h4 class="text-white mb-3">E-commerce Platform</h4>
+                        <p class="text-gray-300 mb-3">Custom online store with inventory management system</p>
+                        <p class="text-blue-400 mb-0">View Case Study →</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 hide-animation">
+                    <div class="service-card p-4">
+                        <h4 class="text-white mb-3">Healthcare App</h4>
+                        <p class="text-gray-300 mb-3">Mobile application for patient management</p>
+                        <p class="text-blue-400 mb-0">View Case Study →</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 hide-animation">
+                    <div class="service-card p-4">
+                        <h4 class="text-white mb-3">Real Estate Platform</h4>
+                        <p class="text-gray-300 mb-3">Property listing and management system</p>
+                        <p class="text-blue-400 mb-0">View Case Study →</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 border-top border-secondary">
+        <!-- Same footer structure as other pages -->
+    </footer>
+
+    <script src="bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script>
+        // Intersection Observer for animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const hiddenElements = document.querySelectorAll('.hide-animation');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            hiddenElements.forEach(element => observer.observe(element));
+        });
+    </script>
+  </body>
+</html>
