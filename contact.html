@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Awesome Solutions</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="shortcut icon" href="secondary-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="combine.css">
+    <style>
+
+    </style>
+  </head>
+  <body style="background-color: #111827;">
+
+
+    <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="./index.html">
+                <img class="img-fluid logo-navbar ms-3 my-2" src="logo.png" alt="Awesome Solutions">
+            </a>
+            <button class="navbar-toggler border-0 button-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-container">
+                    <svg class="menu-icon" width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="5" width="30" height="2" rx="2" fill="white"></rect>
+                        <rect y="13" width="30" height="2" rx="2" fill="white"></rect>
+                        <rect y="21" width="30" height="2" rx="2" fill="white"></rect>
+                    </svg>
+                    <svg class="close-icon" width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4" y1="4" x2="26" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <line x1="4" y1="26" x2="26" y2="4" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </button>
+
+            <div class="navbar-collapse d-lg-flex collapse position-sticky w-100 justify-content-between" id="navbarsExample11">
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center ms-3">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./pricing.html">Pricing & FAQ</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center mx-3">
+                    <a class="hero-button-primary text-decoration-none rounded-2" href="./contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="contact-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center hide-animation">
+                    <h1 class="display-4 text-white mb-4 fw-bold">Get in <span class="gradient-text">Touch</span></h1>
+                    <p class="lead text-gray-300 mb-4">Let's discuss how we can help your business grow</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="d-flex justify-content-center">
+        <div id="messagePopup" class="message-popup container">
+            <p class="m-0 p-0">We apologize for the inconvenience. Our direct messaging feature is currently under maintenance, We're working on it. In the meantime, please reach out to us manually. Thank you for your patience!</p>
+        </div>    
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    const button = form.querySelector("button");
+    const messagePopup = document.getElementById("messagePopup");
+
+    function showMessage() {
+        messagePopup.style.display = "block"; // Show the message
+        setTimeout(() => {
+            messagePopup.style.display = "none"; // Hide after 3 seconds
+        }, 6000);
+    }
+
+    // Show message when the user interacts with the form or button
+    form.addEventListener("click", showMessage);
+    button.addEventListener("click", showMessage);
+});
+</script>
+
+<!-- Styles for the Popup -->
+<style>
+.message-popup {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 9999;
+    font-size: 1rem;
+}
+</style>
+
+    <!-- Contact Form & Info -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Contact Form -->
+
+
+                <!-- Contact Info -->
+                <div class="col-lg-4">
+                    <div class="contact-info-card p-4 mb-4 hide-animation">
+                        <h4 class="text-white mb-4">Contact Information</h4>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="social-icon me-3">
+                                <i class="fa-brands fa-whatsapp text-blue-400"></i>
+                            </div>
+                            <div>
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=923150799213&text=Kindly%20describe%20your%20requirements%20here." class="text-blue-400 mb-0 link text-decoration-none">WhatsApp link</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="social-icon me-3">
+                                <i class="fas fa-phone text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 mb-0">03150799213</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="social-icon me-3">
+                                <i class="fas fa-envelope text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-300 mb-0">awesomesolutions@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card p-4 hide-animation">
+                        <h4 class="text-white mb-4">Business Hours</h4>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-gray-300">Sunday - Thursday:</span>
+                            <span class="text-blue-400">7:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-gray-300">Friday - Saturday</span>
+                            <span class="text-blue-400">3:00 PM - 9:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 hide-animation">
+                    <div class="contact-form p-4">
+                        <h3 class="text-white mb-3 text-center">Send us a Message</h3>
+                        <form id="contactForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="7" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary w-50 disabled">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>                
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-3 border-top border-secondary">
+        <ul class="nav justify-content-center container">
+          <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-gray-300">Home</a></li>
+          <li class="nav-item"><a href="./services.html" class="nav-link px-2 text-gray-300">Services</a></li>
+          <li class="nav-item"><a href="./about.html" class="nav-link px-2 text-gray-300">About</a></li>
+          <li class="nav-item"><a href="./pricing.html" class="nav-link px-2 text-gray-300">Pricing</a></li>
+          <li class="nav-item"><a href="./contact.html" class="nav-link px-2 text-gray-300">Contact</a></li>
+        </ul>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+            <div>
+                <img src="secondary-logo.png" alt="" width="50">
+            </div>
+            <div class="text-light ms-2 text-center fw-bold">
+                <span>Awesome</span><br>
+                <span>Solutions</span>
+            </div>
+            <div class="ms-3 text-light fw-bold">
+                <span>© 2025</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bootstrap.js"></script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script>
+        // Form validation
+        function validateForm(event) {
+            event.preventDefault();
+            // Add your form validation logic here
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset();
+            return false;
+        }
+
+        // Intersection Observer for animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const hiddenElements = document.querySelectorAll('.hide-animation');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            hiddenElements.forEach(element => observer.observe(element));
+        });
+    </script>
+  </body>
+</html>

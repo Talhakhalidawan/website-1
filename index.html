@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="secondary-logo.png" type="image/x-icon">
+    <title>Awesome Solutions - Web Development Company</title>
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="combine.css">
+    <style>
+
+    </style>
+  </head>
+  <body style="background-color: #111827;">
+    <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="./index.html">
+                <img class="img-fluid logo-navbar ms-3 my-2" src="logo.png" alt="Awesome Solutions">
+            </a>
+            <button class="navbar-toggler border-0 button-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-container">
+                    <svg class="menu-icon" width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect y="5" width="30" height="2" rx="2" fill="white"></rect>
+                        <rect y="13" width="30" height="2" rx="2" fill="white"></rect>
+                        <rect y="21" width="30" height="2" rx="2" fill="white"></rect>
+                    </svg>
+                    <svg class="close-icon" width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4" y1="4" x2="26" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        <line x1="4" y1="26" x2="26" y2="4" stroke="white" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </button>
+
+            <div class="navbar-collapse d-lg-flex collapse position-sticky w-100 justify-content-between" id="navbarsExample11">
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center ms-3">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./about.html">About</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link navbar-link text-light fw-medium" href="./pricing.html">Pricing & FAQ</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center mx-3">
+                    <a class="hero-button-primary text-decoration-none rounded-2" href="./contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const hiddenElements = document.querySelectorAll('.hide-animation');
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.1 
+          });
+          hiddenElements.forEach(element => observer.observe(element));
+        });
+      </script>
+<style>
+
+</style>
+    <div class="hero-section d-flex justify-content-start d-flex align-items-center px-3">
+        <div class="hero-content w-50 text-start position-relative w-100">
+            <h1 class="hero-heading fw-bolder mx-800 hide-animation gradient-text-2">
+                Empower Your Business with
+                <span class="gradient-text">Next-Gen </span>
+                Web Innovation
+            </h1>
+            <p class="hero-description hide-animation">
+                Empower your business with innovative, high-performance web solutions that drive results.
+            </p>
+            <div class="hero-buttons hide-animation">
+                <a href="./contact.html" class="hero-button-primary text-decoration-none">Get In Touch</a>
+                <a href="./about.html" class="hero-button-secondary text-decoration-none">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-light hide-animation">Our Offerings</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="text-white mb-0">Frontend Development</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">We develop advanced frontend interfaces using HTML, CSS, React frameworks.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="text-white mb-0">Backend Development</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">We build robust backend systems utilizing Django, Flask Node.js technologies.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="text-white mb-0">Mobile Development</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">We provide cross-platform mobile applications with Flutter, and React Native.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 hide-animation">
+                    <div class="service-card p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <h3 class="text-white mb-0">Software Quality Assurance</h3>
+                        </div>
+                        <p class="text-gray-300 mb-3">Boost your testing efficiency, improve quality, and expedite time-to-market.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="pb-5 pt-4">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold text-light hide-animation">Technologies We Use</h1>
+            </div>
+            <div class="service-card p-4 mb-3 hide-animation text-center">
+                <p class="m-0 p-0 text-light fs-6">We build cutting-edge solutions using a diverse range of modern technologies from Python, JavaScript, HTML, CSS, React, Django, Flask, to Node.js while always accommodating your preferred tools. Your vision drives our tech.</p>
+            </div>
+            <div class="row row-cols-2 row-cols-sm-4 row-cols-md-5 g-3">
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">Python</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/python.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">JavaScript</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/JavaScript.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">HTML</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/html.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">CSS</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/css.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">React</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/React.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">Python Django</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/Django.png" width="100" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">Python Flask</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/Flask.png" width="100" alt="" class="img-fluid" style="filter: drop-shadow(2px 2px 0 white) drop-shadow(-1px 2px 0 white) drop-shadow(1px -1px 0 white) drop-shadow(-1px -1px 0 white);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col hide-animation">
+                    <div class="service-card fixed-size-tech px-3 py-4">
+                        <div class="">
+                            <div class="text-center mb-3">
+                                <h5 class="text-white mb-0">Node Js</h5>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <img src="icons/nodejs.png" width="100" alt="" class="img-fluid" style="filter: drop-shadow(2px 2px 0 white) drop-shadow(-1px 2px 0 white) drop-shadow(1px -1px 0 white) drop-shadow(-1px -1px 0 white);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<footer class="py-3 border-top border-secondary">
+    <ul class="nav justify-content-center container">
+      <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-gray-300">Home</a></li>
+      <li class="nav-item"><a href="./services.html" class="nav-link px-2 text-gray-300">Services</a></li>
+      <li class="nav-item"><a href="./about.html" class="nav-link px-2 text-gray-300">About</a></li>
+      <li class="nav-item"><a href="./pricing.html" class="nav-link px-2 text-gray-300">Pricing</a></li>
+      <li class="nav-item"><a href="./contact.html" class="nav-link px-2 text-gray-300">Contact</a></li>
+    </ul>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+        <div>
+            <img src="secondary-logo.png" alt="" width="50">
+        </div>
+        <div class="text-light ms-2 text-center fw-bold">
+            <span>Awesome</span><br>
+            <span>Solutions</span>
+        </div>
+        <div class="ms-3 text-light fw-bold">
+            <span>© 2025</span>
+        </div>
+    </div>
+</footer>
+
+    <script src="bootstrap.js"></script>
+  </body>
+</html>
