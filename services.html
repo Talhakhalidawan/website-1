@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Services - Awesome Solutions</title>
     <link href="/attached_assets/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reuse existing styles */
         .navbar-link {
@@ -108,10 +109,31 @@
   <body style="background-color: #111827;">
     <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="/index.html">
+            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="/">
                 <img class="img-fluid logo-navbar ms-3 my-2" src="/attached_assets/logo.png" alt="Awesome Solutions">
             </a>
-            <!-- Rest of the navbar structure remains unchanged -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse d-lg-flex collapse position-sticky w-100 justify-content-between" id="navbarNav">
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-link text-light fw-medium" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-link text-light fw-medium" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-link text-light fw-medium active" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-link text-light fw-medium" href="/pricing">Pricing</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-center mx-3">
+                    <a class="btn btn-primary rounded-2" href="/contact">Contact</a>
+                </div>
+            </div>
         </div>
     </nav>
 
