@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About Us - Awesome Solutions</title>
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="./attached_assets/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Reuse existing styles */
+        /* Navbar styles */
         .navbar-link {
             position: relative;
             transition: all .4s ease-in-out;
@@ -25,9 +26,6 @@
         .navbar-link:hover::after {
             width: 100%;
         }
-        .navbar-link:hover {
-            cursor: context-menu;
-        }
         .logo-navbar {
             width: 150px;
             margin: 0;
@@ -37,74 +35,169 @@
             background-color: #111827e6;
             backdrop-filter: blur(8px);
         }
-        .bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .border-gray-700 {
-            border-color: #374151 !important;
-        }
-        .text-blue-400 {
-            color: rgb(96 165 250);
-        }
-        .text-gray-300 {
-            color: rgb(209 213 219);
-        }
 
         /* About page specific styles */
         .about-hero {
-            background: linear-gradient(to bottom right, #010d22, rgb(37, 49, 69), #0e1323);
-            padding: 100px 0 50px 0;
-        }
-        .team-member-card {
-            background: #1f2937;
-            border-radius: 1rem;
+            min-height: 60vh;
+            background: linear-gradient(45deg, #010d22, #1a365d);
+            position: relative;
             overflow: hidden;
-            transition: transform 0.3s ease;
         }
-        .team-member-card:hover {
-            transform: translateY(-5px);
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #0029e1 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+            opacity: 0.1;
         }
-        .tech-stack-item {
+
+        @keyframes rotate {
+            from { transform: rotate(0deg) translate(-50%, -50%); }
+            to { transform: rotate(360deg) translate(-50%, -50%); }
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #0029e1, transparent);
+        }
+
+        .timeline-item {
+            width: 100%;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            width: calc(50% - 2rem);
+            padding: 1.5rem;
             background: #1f2937;
             border: 1px solid #374151;
             border-radius: 0.5rem;
-            padding: 1rem;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #0029e1;
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            left: -2.5rem;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: -2.5rem;
+            transform: translateY(-50%);
+        }
+
+        /* Team section styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 41, 225, 0.1);
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-role {
+            color: #0029e1;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Skills section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
         }
-        .tech-stack-item:hover {
+
+        .skill-item:hover {
             background: #2d3748;
-            transform: translateY(-2px);
+            transform: translateY(-5px);
         }
-        .tech-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: #60a5fa;
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0029e1;
         }
-        .gradient-text {
+
+        /* Utility classes */
+        .text-gradient {
             background: linear-gradient(to right, #4dafff, #0029e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200%;
-            background-position: center;
         }
-        .hide-animation {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+
+        .bg-dark-800 {
+            background-color: #1f2937;
         }
-        .show {
-            opacity: 1;
-            transform: translateY(0);
+
+        .text-gray-300 {
+            color: #d1d5db;
         }
     </style>
   </head>
   <body style="background-color: #111827;">
-    <!-- Navbar (same as home page) -->
+    <!-- Navbar -->
     <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="index.html">
-                <img class="img-fluid logo-navbar ms-3 my-2" src="logo.png" alt="Awesome Solutions">
+            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="./attached_assets/index.html">
+                <img class="img-fluid logo-navbar ms-3 my-2" src="./attached_assets/logo.png" alt="Awesome Solutions">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -112,7 +205,7 @@
             <div class="navbar-collapse d-lg-flex collapse position-sticky w-100 justify-content-between" id="navbarNav">
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center ms-3">
                     <li class="nav-item">
-                        <a class="nav-link navbar-link text-light fw-medium" href="index.html">Home</a>
+                        <a class="nav-link navbar-link text-light fw-medium" href="./attached_assets/index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navbar-link text-light fw-medium active" href="about.html">About</a>
@@ -131,32 +224,47 @@
         </div>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center hide-animation">
-                    <h1 class="display-4 text-white mb-4">About <span class="gradient-text">Awesome Solutions</span></h1>
-                    <p class="lead text-gray-300 mb-4">We're a team of passionate developers and designers creating innovative digital solutions since 2018.</p>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section class="about-hero d-flex align-items-center">
+        <div class="container text-center position-relative">
+            <h1 class="display-4 text-white mb-4">Our Journey in <span class="text-gradient">Digital Excellence</span></h1>
+            <p class="lead text-gray-300 mb-4 mx-auto" style="max-width: 700px;">
+                Since 2018, we've been transforming businesses through innovative digital solutions and cutting-edge technology.
+            </p>
         </div>
     </section>
 
-    <!-- Mission & Vision -->
+    <!-- Timeline Section -->
     <section class="py-5">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-6 hide-animation">
-                    <div class="bg-gray-800 p-4 rounded-4 h-100 border border-gray-700">
-                        <h3 class="text-white mb-3">Our Mission</h3>
-                        <p class="text-gray-300 mb-0">To empower businesses with cutting-edge technology solutions that drive growth and innovation in the digital age.</p>
+            <h2 class="text-white text-center mb-5">Our Story</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-gradient mb-3">2018</h4>
+                        <h5 class="text-white mb-2">Foundation</h5>
+                        <p class="text-gray-300 mb-0">Started as a small web development studio with a vision to create impactful digital solutions.</p>
                     </div>
                 </div>
-                <div class="col-md-6 hide-animation">
-                    <div class="bg-gray-800 p-4 rounded-4 h-100 border border-gray-700">
-                        <h3 class="text-white mb-3">Our Vision</h3>
-                        <p class="text-gray-300 mb-0">To be the leading technology partner for businesses worldwide, known for excellence, innovation, and client success.</p>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-gradient mb-3">2020</h4>
+                        <h5 class="text-white mb-2">Growth & Expansion</h5>
+                        <p class="text-gray-300 mb-0">Expanded our services to include mobile app development and digital marketing solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-gradient mb-3">2022</h4>
+                        <h5 class="text-white mb-2">Innovation Hub</h5>
+                        <p class="text-gray-300 mb-0">Established our innovation lab focusing on emerging technologies and AI solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4 class="text-gradient mb-3">2025</h4>
+                        <h5 class="text-white mb-2">Global Reach</h5>
+                        <p class="text-gray-300 mb-0">Now serving clients worldwide with innovative digital solutions and expert consultation.</p>
                     </div>
                 </div>
             </div>
@@ -164,90 +272,74 @@
     </section>
 
     <!-- Team Section -->
-    <section class="py-5">
+    <section class="py-5 bg-dark-800">
         <div class="container">
-            <h2 class="text-white text-center mb-5">Our Team</h2>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 hide-animation">
-                    <div class="team-member-card">
-                        <div class="p-4">
-                            <h5 class="text-white mb-2">John Smith</h5>
-                            <p class="text-blue-400 mb-3">CEO & Founder</p>
-                            <p class="text-gray-300 small">15+ years of experience in software development and business leadership.</p>
-                        </div>
+            <h2 class="text-white text-center mb-5">Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4 class="text-white mb-2">John Smith</h4>
+                        <p class="member-role mb-3">CEO & Founder</p>
+                        <p class="text-gray-300">Visionary leader with 15+ years of experience in software development and business strategy.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 hide-animation">
-                    <div class="team-member-card">
-                        <div class="p-4">
-                            <h5 class="text-white mb-2">Sarah Johnson</h5>
-                            <p class="text-blue-400 mb-3">Lead Developer</p>
-                            <p class="text-gray-300 small">Expert in full-stack development and cloud architecture.</p>
-                        </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4 class="text-white mb-2">Sarah Johnson</h4>
+                        <p class="member-role mb-3">Technical Director</p>
+                        <p class="text-gray-300">Expert in cloud architecture and emerging technologies with a passion for innovation.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 hide-animation">
-                    <div class="team-member-card">
-                        <div class="p-4">
-                            <h5 class="text-white mb-2">Mike Wilson</h5>
-                            <p class="text-blue-400 mb-3">UX Designer</p>
-                            <p class="text-gray-300 small">Passionate about creating intuitive user experiences.</p>
-                        </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4 class="text-white mb-2">Michael Chen</h4>
+                        <p class="member-role mb-3">Creative Director</p>
+                        <p class="text-gray-300">Award-winning designer specializing in user experience and brand identity.</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 hide-animation">
-                    <div class="team-member-card">
-                        <div class="p-4">
-                            <h5 class="text-white mb-2">Emily Chen</h5>
-                            <p class="text-blue-400 mb-3">Project Manager</p>
-                            <p class="text-gray-300 small">Skilled in agile methodologies and team leadership.</p>
-                        </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4 class="text-white mb-2">Emily Wilson</h4>
+                        <p class="member-role mb-3">Project Manager</p>
+                        <p class="text-gray-300">Certified Scrum Master with a track record of successful project deliveries.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technologies Section -->
+    <!-- Skills Section -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-white text-center mb-5">Technologies We Use</h2>
-            <div class="row g-4">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-react tech-icon"></i>
-                        <h6 class="text-white mb-0">React</h6>
+            <h2 class="text-white text-center mb-5">Our Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
                     </div>
+                    <h5 class="text-white mb-2">Web Development</h5>
+                    <p class="text-gray-300 mb-0">Modern, responsive websites</p>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-node tech-icon"></i>
-                        <h6 class="text-white mb-0">Node.js</h6>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
+                    <h5 class="text-white mb-2">Mobile Apps</h5>
+                    <p class="text-gray-300 mb-0">iOS and Android solutions</p>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-python tech-icon"></i>
-                        <h6 class="text-white mb-0">Python</h6>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
+                    <h5 class="text-white mb-2">UI/UX Design</h5>
+                    <p class="text-gray-300 mb-0">Intuitive user experiences</p>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-aws tech-icon"></i>
-                        <h6 class="text-white mb-0">AWS</h6>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-docker tech-icon"></i>
-                        <h6 class="text-white mb-0">Docker</h6>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 hide-animation">
-                    <div class="tech-stack-item">
-                        <i class="fab fa-angular tech-icon"></i>
-                        <h6 class="text-white mb-0">Angular</h6>
-                    </div>
+                    <h5 class="text-white mb-2">Cloud Solutions</h5>
+                    <p class="text-gray-300 mb-0">Scalable infrastructure</p>
                 </div>
             </div>
         </div>
@@ -256,7 +348,7 @@
     <!-- Footer -->
     <footer class="py-3 border-top border-secondary">
         <ul class="nav justify-content-center container">
-            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-gray-300">Home</a></li>
+            <li class="nav-item"><a href="./attached_assets/index.html" class="nav-link px-2 text-gray-300">Home</a></li>
             <li class="nav-item"><a href="services.html" class="nav-link px-2 text-gray-300">Services</a></li>
             <li class="nav-item"><a href="about.html" class="nav-link px-2 text-gray-300">About</a></li>
             <li class="nav-item"><a href="pricing.html" class="nav-link px-2 text-gray-300">Pricing</a></li>
@@ -265,25 +357,6 @@
         <p class="text-center text-light mt-3">© Awesome Solutions, 2025</p>
     </footer>
 
-    <script src="bootstrap.js"></script>
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
-    <script>
-        // Intersection Observer for animations
-        document.addEventListener("DOMContentLoaded", function() {
-            const hiddenElements = document.querySelectorAll('.hide-animation');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('show');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            hiddenElements.forEach(element => observer.observe(element));
-        });
-    </script>
+    <script src="./attached_assets/bootstrap.js"></script>
   </body>
 </html>
