@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>About Us - Awesome Solutions</title>
-    <link href="./attached_assets/bootstrap.css" rel="stylesheet">
+    <link href="/attached_assets/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Navbar styles */
@@ -26,6 +26,9 @@
         .navbar-link:hover::after {
             width: 100%;
         }
+        .navbar-link:hover {
+            cursor: context-menu;
+        }
         .logo-navbar {
             width: 150px;
             margin: 0;
@@ -42,6 +45,7 @@
             background: linear-gradient(45deg, #010d22, #1a365d);
             position: relative;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .about-hero::before {
@@ -79,6 +83,14 @@
             width: 100%;
             margin-bottom: 3rem;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .timeline-content {
@@ -132,6 +144,14 @@
             border-radius: 1rem;
             overflow: hidden;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .team-member.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .team-member:hover {
@@ -163,6 +183,14 @@
             padding: 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .skill-item.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .skill-item:hover {
@@ -196,8 +224,8 @@
     <!-- Navbar -->
     <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="./attached_assets/index.html">
-                <img class="img-fluid logo-navbar ms-3 my-2" src="./attached_assets/logo.png" alt="Awesome Solutions">
+            <a class="navbar-brand col-lg-4 p-0 fw-bold m-0 p-0" href="/">
+                <img class="img-fluid logo-navbar ms-3 my-2" src="/attached_assets/logo.png" alt="Awesome Solutions">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -205,20 +233,20 @@
             <div class="navbar-collapse d-lg-flex collapse position-sticky w-100 justify-content-between" id="navbarNav">
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center ms-3">
                     <li class="nav-item">
-                        <a class="nav-link navbar-link text-light fw-medium" href="./attached_assets/index.html">Home</a>
+                        <a class="nav-link navbar-link text-light fw-medium" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-link text-light fw-medium active" href="about.html">About</a>
+                        <a class="nav-link navbar-link text-light fw-medium active" href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-link text-light fw-medium" href="services.html">Services</a>
+                        <a class="nav-link navbar-link text-light fw-medium" href="/services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-link text-light fw-medium" href="pricing.html">Pricing</a>
+                        <a class="nav-link navbar-link text-light fw-medium" href="/pricing">Pricing</a>
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center mx-3">
-                    <a class="btn btn-primary rounded-2" href="contact.html">Contact</a>
+                    <a class="btn btn-primary rounded-2" href="/contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -348,15 +376,33 @@
     <!-- Footer -->
     <footer class="py-3 border-top border-secondary">
         <ul class="nav justify-content-center container">
-            <li class="nav-item"><a href="./attached_assets/index.html" class="nav-link px-2 text-gray-300">Home</a></li>
-            <li class="nav-item"><a href="services.html" class="nav-link px-2 text-gray-300">Services</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link px-2 text-gray-300">About</a></li>
-            <li class="nav-item"><a href="pricing.html" class="nav-link px-2 text-gray-300">Pricing</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-gray-300">Contact</a></li>
+            <li class="nav-item"><a href="/" class="nav-link px-2 text-gray-300">Home</a></li>
+            <li class="nav-item"><a href="/services" class="nav-link px-2 text-gray-300">Services</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link px-2 text-gray-300">About</a></li>
+            <li class="nav-item"><a href="/pricing" class="nav-link px-2 text-gray-300">Pricing</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link px-2 text-gray-300">Contact</a></li>
         </ul>
         <p class="text-center text-light mt-3">© Awesome Solutions, 2025</p>
     </footer>
 
-    <script src="./attached_assets/bootstrap.js"></script>
+    <script src="/attached_assets/bootstrap.js"></script>
+    <script>
+        // Intersection Observer for animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observeElements = document.querySelectorAll('.timeline-item, .team-member, .skill-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            observeElements.forEach(element => observer.observe(element));
+        });
+    </script>
   </body>
 </html>
