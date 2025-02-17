@@ -10,9 +10,15 @@
     <meta name="description" content="Boost ROI with tailored website & app development. 10+ years expertise in responsive design, SEO, and digital marketing. Free consultation today!" />
     <link href="bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="combine.css">
-    <style>
-
-    </style>
+    <script>
+        fetch('https://awesomesolutions.pythonanywhere.com/track', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ from: 'homepage' }),  // Include the 'from' parameter
+        });
+    </script>
   </head>
   <body style="background-color: #111827;">
     <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
