@@ -74,46 +74,6 @@
         </div>
     </section>
 
-    <div class="d-flex justify-content-center">
-        <div id="messagePopup" class="message-popup container">
-            <p class="m-0 p-0">We apologize for the inconvenience. Our direct messaging feature is currently under maintenance, We're working on it. In the meantime, please reach out to us manually. Thank you for your patience!</p>
-        </div>    
-    </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
-    const button = form.querySelector("button");
-    const messagePopup = document.getElementById("messagePopup");
-
-    function showMessage() {
-        messagePopup.style.display = "block"; // Show the message
-        setTimeout(() => {
-            messagePopup.style.display = "none"; // Hide after 3 seconds
-        }, 6000);
-    }
-
-    // Show message when the user interacts with the form or button
-    form.addEventListener("click", showMessage);
-    button.addEventListener("click", showMessage);
-});
-</script>
-
-<!-- Styles for the Popup -->
-<style>
-.message-popup {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-align: center;
-    z-index: 9999;
-    font-size: 1rem;
-}
-</style>
 
     <!-- Contact Form & Info -->
     <section class="py-5">
@@ -166,34 +126,66 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
                 <div class="col-lg-8 hide-animation">
-                    <div class="contact-form p-4">
-                        <h3 class="text-white mb-3 text-center">Send us a Message</h3>
-                        <form id="contactForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email Address" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Subject" required>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control" rows="7" placeholder="Your Message" required></textarea>
-                                </div>
-                                <div class="col-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary w-50 disabled">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                  <div class="contact-form p-4" bis_skin_checked="1">
+                      <h3 class="text-white mb-3 text-center">Send us a Message</h3>
+                      <form id="contactForm" class="contact-form">
+                          <div class="row g-3" bis_skin_checked="1">
+                              <div class="col-md-6" bis_skin_checked="1">
+                                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                              </div>
+                              <div class="col-md-6" bis_skin_checked="1">
+                                  <input type="email" name="email" class="form-control" placeholder="Email Address" required="">
+                              </div>
+                              <div class="col-md-6" bis_skin_checked="1">
+                                  <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required="">
+                              </div>
+                              <div class="col-md-6" bis_skin_checked="1">
+                                  <input type="text" class="form-control" placeholder="Service" required="">
+                              </div>
+                              <div class="col-12" bis_skin_checked="1">
+                                  <textarea name="message" class="form-control" rows="7" placeholder="Your Message" required=""></textarea>
+                              </div>
+                              <div class="col-12 d-flex justify-content-center" bis_skin_checked="1">
+                                  <button type="submit" class="btn btn-primary w-50 disabled submit-btn">Send Message</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
                 </div>                
 
             </div>
         </div>
     </section>
-
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    
+    // Add the source domain to identify where the form was submitted from
+    formData.append('source_domain', window.location.hostname);
+    
+    try {
+        const response = await fetch('https://olivedrab-bee-478349.hostingersite.com/api.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            alert('Thank you! Your message has been sent successfully.');
+            this.reset(); // Reset form
+        } else {
+            alert('Sorry, there was an error sending your message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again.');
+    }
+});
+</script>
     <footer class="py-3 border-top border-secondary">
         <ul class="nav justify-content-center container">
           <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-gray-300">Home</a></li>
