@@ -175,27 +175,34 @@ document.getElementById('contactForm').addEventListener('submit', async function
     };
     
     try {
+        console.log('Sending data:', formData); // Debug log
+        
         const response = await fetch('https://executers.ae/api/mail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(formData)
         });
         
+        console.log('Response status:', response.status); // Debug log
+        
         const data = await response.json();
+        console.log('Response data:', data); // Debug log
         
         if (data.success) {
             alert('Thank you! Your message has been sent successfully.');
             this.reset();
         } else {
+            console.error('Error response:', data); // Debug log
             alert('Sorry, there was an error sending your message: ' + data.message);
             if (data.debug) {
                 console.error('Debug info:', data.debug);
             }
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Fetch error:', error); // Debug log
         alert('Sorry, there was an error sending your message. Please try again.');
     } finally {
         // Re-enable submit button
