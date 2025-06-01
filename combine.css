@@ -673,3 +673,7 @@
     overflow: hidden;
     border: 1px solid #374151;
 }
+
+.nav-link {
+    white-space: nowrap;
+}
