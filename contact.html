@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="combine.css">
     <meta name="description" content="Get a 24-hour response from our web development team. Schedule a free strategy call to transform your digital presence.">
-  </head>
+    <script>
+        fetch('https://awesomesolutions.pythonanywhere.com/track', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ from: 'contact-page' }),
+        });
+    </script>
+</head>
   <body style="background-color: #111827;">
     
     <nav class="navbar border-1 border border-secondary navbar-expand-lg m-2 rounded-4 fixed-top navbar-custom">
